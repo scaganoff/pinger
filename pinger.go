@@ -8,7 +8,7 @@ import (
 	"os"
 )
 
-var ServiceURL = "http://localhost:8081"
+var ServiceURL = "http://code-with-quarkus:8081"
 
 func main() {
 	http.HandleFunc("/", handler)
@@ -16,7 +16,6 @@ func main() {
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	ServiceURL := os.Getenv("SERVICE_URL")
 	proxyURL, _ := url.Parse(ServiceURL)
 	proxy := httputil.NewSingleHostReverseProxy(proxyURL)
 
