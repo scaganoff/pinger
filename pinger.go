@@ -5,7 +5,6 @@ import (
 	"net/http"
 	"net/http/httputil"
 	"net/url"
-	"os"
 )
 
 var ServiceURL = "http://code-with-quarkus:8081"
